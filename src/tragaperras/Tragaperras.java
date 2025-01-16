@@ -13,6 +13,7 @@ import java.util.Random;
 public class Tragaperras {
     static Scanner teclado = new Scanner(System.in);
     static Random random = new Random();
+    
     private String nombre;
     private double dinero;
     private int avance;
@@ -218,7 +219,6 @@ public class Tragaperras {
     
     public void usarAvance(Casilla[] casilla) {
         int usuario;
-        do {
             do {
                 System.out.println("");
                 System.out.println("En que casilla deseas usar el avance?");
@@ -228,14 +228,19 @@ public class Tragaperras {
                 }
 
             } while (usuario > 3 || usuario < 1);
-            if (!casilla[usuario].isAvanceMax()) {
+            if (casilla[usuario-1].isAvanceMax() == false) {
                 System.out.println("Ya se ha alcanzado el numero maximo de avances");
             }
-        } while (!casilla[usuario].isAvanceMax());
 
-        casilla[usuario].setNumero(random.nextInt(8));
-        casilla[usuario].generarAvance();
-        setAvance(getAvance() - 1);
+        casilla[usuario-1].setNumero(random.nextInt(8));
+        casilla[usuario-1].generarAvance();
+        setAvance(getAvance() + 1);
+
+    }
+    public void mostrarNumeros(Casilla[] casilla) {
+        for (int i = 0; i < casilla.length; i++) {
+            System.out.println("casilla " + i+1 + ": " + casilla[i].getNumero());
+        }
 
     }
     

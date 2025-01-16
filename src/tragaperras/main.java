@@ -19,18 +19,14 @@ public class main {
     static Scanner teclado = new Scanner(System.in);
     
     public static void main(String[] args) {
+       
         Jugador jugador = new Jugador("Raul",10,false);   
         Casilla[] aCasilla = {
-           new Casilla(0, "casilla 1",0, false),
-           new Casilla(0, "casilla 2", 0,false),
-           new Casilla(0, "casilla 3",0,false)};
+           new Casilla(0, "casilla 1",0, true),
+           new Casilla(0, "casilla 2", 0,true),
+           new Casilla(0, "casilla 3",0,true)};
         Tragaperras tragaperras = new Tragaperras("El ahorcado",0,0,aCasilla[0],aCasilla[1],aCasilla[2]);
         int usuario;
-        
-        
-        
-        
-        
         
         
         
@@ -46,30 +42,36 @@ public class main {
                 case 2:
                     tragaperras.tirarCarrusel(aCasilla);
                     tragaperras.mostrarInfo();
-                    tragaperras.comprobarRecompensas(aCasilla);
-                    if (Menu.menuCarrusel()){
+                    if (Menu.menuCarrusel()) {
                         tragaperras.usarAvance(aCasilla);
                     }
+                    tragaperras.mostrarNumeros(aCasilla);
+                    tragaperras.comprobarRecompensas(aCasilla);
+
                     break;
                 case 3:
                     tragaperras.mostrarInfo();
+                    Menu.saltoLinea();
                     break;
                 case 4:
                     saldoTra = Menu.Introduccion(jugador);
                     tragaperras.introducirSaldo(jugador, saldoTra);
+                    Menu.saltoLinea();
                     break;
                 case 5:
                     tragaperras.sacarDinero(jugador);
+                    Menu.saltoLinea();
                     break;
                 case 6:
                     tragaperras.mostrarAvance();
+                    Menu.saltoLinea();
                     break;
                 case 7:
                     System.out.println("Muchas gracias por jugar con nosotros, tenga un buen día y vuelva pronto");
                     break;
                  default:
                      System.out.println("Elija un número del menu:");
-                     System.out.println("");
+                     Menu.saltoLinea();
                      break;
                    
 

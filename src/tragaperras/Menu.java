@@ -60,4 +60,8 @@ public class Menu {
         return usar;
     }
     
+    public static void saltoLinea(){
+        System.out.println("");
+    }
+    
 }
