@@ -234,12 +234,12 @@ public class Tragaperras {
 
         casilla[usuario-1].setNumero(random.nextInt(8));
         casilla[usuario-1].generarAvance();
-        setAvance(getAvance() + 1);
+        setAvance(getAvance() - 1);
 
     }
     public void mostrarNumeros(Casilla[] casilla) {
         for (int i = 0; i < casilla.length; i++) {
-            System.out.println("casilla " + i+1 + ": " + casilla[i].getNumero());
+            System.out.println("casilla " + (i + 1) + ": " + casilla[i].getNumero());
         }
 
     }

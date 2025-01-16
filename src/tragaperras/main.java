@@ -42,8 +42,10 @@ public class main {
                 case 2:
                     tragaperras.tirarCarrusel(aCasilla);
                     tragaperras.mostrarInfo();
-                    if (Menu.menuCarrusel()) {
-                        tragaperras.usarAvance(aCasilla);
+                    if (tragaperras.getAvance() > 0) {
+                        if (Menu.menuCarrusel()) {
+                            tragaperras.usarAvance(aCasilla);
+                        }
                     }
                     tragaperras.mostrarNumeros(aCasilla);
                     tragaperras.comprobarRecompensas(aCasilla);

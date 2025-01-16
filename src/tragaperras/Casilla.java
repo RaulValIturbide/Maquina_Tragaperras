@@ -30,6 +30,9 @@ public class Casilla {
     public String getNombre(){
         return nombre;
     }
+    public int getAvance(){
+        return avance;
+    }
 
     public boolean isAvanceMax() {
         return avanceMax;
@@ -37,6 +40,9 @@ public class Casilla {
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+    public void setAvance(int avance){
+        this.avance = avance;
     }
 
     public void setNombre(String nombre) {
