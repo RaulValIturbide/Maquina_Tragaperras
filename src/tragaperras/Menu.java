@@ -63,5 +63,14 @@ public class Menu {
     public static void saltoLinea(){
         System.out.println("");
     }
+    public static boolean saldoTirada(Tragaperras tragaperras) {
+        boolean suficiente;
+        if (tragaperras.getDinero() > 0) {
+            suficiente = true;
+        } else {
+            suficiente = false;
+        }
+        return suficiente;
+    }
     
 }

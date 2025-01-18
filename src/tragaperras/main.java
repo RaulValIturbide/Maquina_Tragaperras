@@ -40,15 +40,20 @@ public class main {
                     jugador.mostrarInfo();
                     break;
                 case 2:
-                    tragaperras.tirarCarrusel(aCasilla);
-                    tragaperras.mostrarInfo();
-                    if (tragaperras.getAvance() > 0) {
-                        if (Menu.menuCarrusel()) {
-                            tragaperras.usarAvance(aCasilla);
+                    if (Menu.saldoTirada(tragaperras)) {
+                        tragaperras.tirarCarrusel(aCasilla);
+                        tragaperras.mostrarInfo();
+                        if (tragaperras.getAvance() > 0) {
+                            if (Menu.menuCarrusel()) {
+                                tragaperras.usarAvance(aCasilla);
+                            }
                         }
+                        tragaperras.mostrarNumeros(aCasilla);
+                        tragaperras.comprobarRecompensas(aCasilla);
+                    } else {
+                        System.out.println("Lo siento, no tienes suficiente dinero");
+                        Menu.saltoLinea();
                     }
-                    tragaperras.mostrarNumeros(aCasilla);
-                    tragaperras.comprobarRecompensas(aCasilla);
 
                     break;
                 case 3:
